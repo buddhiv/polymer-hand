@@ -1,3 +1,13 @@
+benefitor:
+    resource: "@BenefitorBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+donor:
+    resource: "@DonorBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 base:
     resource: "@BaseBundle/Controller/"
     type:     annotation
