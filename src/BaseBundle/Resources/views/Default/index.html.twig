@@ -11,7 +11,6 @@
     <link rel="import" href="{{ asset('/assets/vendor/paper-icon-button/paper-icon-button.html') }}"/>
     <link rel="import" href="{{ asset('/assets/vendor/paper-styles/color.html') }}"/>
     <link rel="import" href="{{ asset('/assets/vendor/paper-styles/demo.css') }}"/>
-    <link rel="import" href="{{ asset('/assets/vendor/iron-flex-layout/iron-flex-layout.html') }}"/>
 
     <style is="custom-style">
 
@@ -58,6 +57,23 @@
             @apply(--layout-flex);
         }
 
+        .flex-horizontal {
+            @apply(--layout-horizontal);
+        }
+
+        .flexchild {
+            @apply(--layout-flex);
+        }
+
+        .flex-center-justified {
+            @apply(--layout-horizontal);
+            @apply(--layout-center-justified);
+        }
+
+        .flex-equal-around-justified {
+            @apply(--layout-horizontal);
+            @apply(--layout-around-justified);
+        }
     </style>
 
 {% endblock %}
@@ -76,27 +92,18 @@
 
         </paper-toolbar>
 
-        <div class="content">
-
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-            <h1>AAAA<br/></h1>
-
+        <div class="container flex-equal-around-justified" style="background-color: #0f9d58">
+            <div class="">one</div>
+            <div class="">two (flex)</div>
+            <div class="">three</div>
         </div>
 
     </paper-scroll-header-panel>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 
     <script>
 
@@ -111,8 +118,4 @@
         });
 
     </script>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
 {% endblock %}
