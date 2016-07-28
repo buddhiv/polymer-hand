@@ -4,12 +4,113 @@
 
 {% block stylesheets %}
     {{ parent() }}
+    <link rel="import"
+          href="{{ asset('/assets/vendor/paper-scroll-header-panel/paper-scroll-header-panel.html') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/paper-toolbar/paper-toolbar.html') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/paper-button/paper-button.html') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/paper-icon-button/paper-icon-button.html') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/paper-styles/color.html') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/paper-styles/demo.css') }}"/>
+    <link rel="import" href="{{ asset('/assets/vendor/iron-flex-layout/iron-flex-layout.html') }}"/>
+
+    <style is="custom-style">
+
+        paper-scroll-header-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: var(--paper-grey-200, #eee);
+
+            /* background for toolbar when it is at its full size */
+            --paper-scroll-header-panel-full-header: {
+                background-image: url(images/bg4.jpg);
+            };
+
+            /* background for toolbar when it is condensed */
+            --paper-scroll-header-panel-condensed-header: {
+                background-color: var(--paper-light-blue-600);
+            };
+        }
+
+        paper-icon-button {
+            --paper-icon-button-ink-color: white;
+        }
+
+        paper-toolbar.tall {
+            background-color: transparent;
+        }
+
+        paper-toolbar.tall .title {
+            font-size: 40px;
+            margin-left: 60px;
+
+            -webkit-transform-origin: left center;
+            transform-origin: left center;
+        }
+
+        .content {
+            padding: 8px;
+        }
+
+        .spacer {
+            @apply(--layout-flex);
+        }
+
+    </style>
+
 {% endblock %}
 
 {% block body %}
 
-    <paper-button toggles raised>toggles</paper-button>
+    <paper-scroll-header-panel condenses>
 
+        <paper-toolbar class="tall">
+
+            <paper-icon-button icon="arrow-back"></paper-icon-button>
+            <div class="spacer"></div>
+            <paper-button>Flat</paper-button>
+            <paper-button>More</paper-button>
+            <div class="bottom title">Polymer Hand</div>
+
+        </paper-toolbar>
+
+        <div class="content">
+
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+            <h1>AAAA<br/></h1>
+
+        </div>
+
+    </paper-scroll-header-panel>
+
+    <script>
+
+        // custom transformation: scale header's title
+        var title = document.querySelector('.title');
+        addEventListener('paper-header-transform', function (e) {
+            var d = e.detail;
+            var m = d.height - d.condensedHeight;
+            var scale = Math.max(0.75, (m - d.y) / (m / 0.25) + 0.75);
+
+            Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
+        });
+
+    </script>
 {% endblock %}
 
 {% block javascripts %}

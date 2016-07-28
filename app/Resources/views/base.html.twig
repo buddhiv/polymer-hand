@@ -7,19 +7,15 @@
 
     {% block stylesheets %}
 
-        <link rel="import"
-              href="{{ asset('/assets/vendor/paper-scroll-header-panel/paper-scroll-header-panel.html') }}"/>
         <link rel="import" href="{{ asset('/assets/vendor/polymer/polymer.html') }}"/>
         <link rel="import" href="{{ asset('/assets/vendor/iron-icons/iron-icons.html') }}"/>
-        <link rel="import" href="{{ asset('/assets/vendor/paper-toolbar/paper-toolbar.html') }}"/>
-        <link rel="import" href="{{ asset('/assets/vendor/paper-button/paper-button.html') }}"/>
 
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 
-<body>
+<body class="fullbleed layout vertical">
 
 {% block body %}{% endblock %}
 
