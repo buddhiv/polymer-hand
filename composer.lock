@@ -4,9 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb3b3eacd5d11a7d3d610a6af5af40b4",
-    "content-hash": "5ee156a708050871b6cf5d76afedb997",
+    "hash": "9dde3d4dbe2dc7474689e67787feccae",
+    "content-hash": "dfd074ddb0b4af7193d8d5cefc82a2b0",
     "packages": [
+        {
+            "name": "components/polymer",
+            "version": "0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/polymer.git",
+                "reference": "b808046b7e58c1f9f41ce03486cae221d712b45a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/polymer/zipball/b808046b7e58c1f9f41ce03486cae221d712b45a",
+                "reference": "b808046b7e58c1f9f41ce03486cae221d712b45a",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "polymer",
+                    "scripts": [
+                        "polymer.min.js"
+                    ],
+                    "files": [
+                        "src/**",
+                        "platform/**",
+                        "polymer.min.js",
+                        "polymer.min.js.map",
+                        "polymer.native.min.js",
+                        "polymer.native.min.js.map"
+                    ],
+                    "shim": {
+                        "exports": "Platform"
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Polymer Authors",
+                    "email": "polymer-dev@googlegroups.com"
+                }
+            ],
+            "description": "Leverage the future of the web platform today.",
+            "homepage": "http://www.polymer-project.org/",
+            "keywords": [
+                "browser",
+                "client",
+                "util"
+            ],
+            "time": "2014-06-25 23:38:12"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
@@ -2056,22 +2106,13 @@
             "time": "2016-06-29 05:42:25"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"
     },
-    "platform-dev": [
-
-    ],
-    "platform-overrides": {
-        "php": "5.5.9"
-    }
+    "platform-dev": []
 }
